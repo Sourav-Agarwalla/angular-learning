@@ -1,1 +1,9 @@
-<p>{{ title() }}</p>
+<app-second-component
+  [name]="title()"
+  [isActive]="'ddd'"
+  [(value)]="value"
+  [(toggled)]="value2"
+  (onToggleChange)="title.set($event)"
+>
+  {{ value() }}
+</app-second-component>
