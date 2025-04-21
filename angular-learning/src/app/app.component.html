@@ -1,11 +1,2 @@
 <app-first-component [style]="'display: block'"></app-first-component>
-@let taskLength = (tasks$ | async)?.length; @for(task of tasks$ | async; track
-task) {
-<div class="task">
-  <h3>{{ task.title }}</h3>
-  <p>{{ task.description }}</p>
-  <button (click)="updateTask(task)">Update</button>
-  <button (click)="deleteTask(task.id)">Delete</button>
-</div>
-}
-<button (click)="addNewTask(taskLength)">Add New Task</button>
+<app-third-component></app-third-component>

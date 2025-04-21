@@ -4,12 +4,15 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideState, provideStore } from '@ngrx/store';
 import { taskReducer } from './reducers/task.reducers';
+import { provideEffects } from '@ngrx/effects';
+import { TaskEffects } from './effects/task.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideStore({ tasks: taskReducer }),
+    provideStore(),
+    provideState({ name: 'tasks', reducer: taskReducer }),
+    provideEffects([TaskEffects]),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    // provideState({ name: 'task', reducer: taskReducer }),
   ],
 };

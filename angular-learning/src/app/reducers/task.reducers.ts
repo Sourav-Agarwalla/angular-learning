@@ -1,10 +1,11 @@
 import { Action, createReducer, on } from '@ngrx/store';
+import { AppState } from '../interfaces/first-interface.model';
 import {
-  AppState,
-  CustomAction,
-  Task,
-} from '../interfaces/first-interface.model';
-import { addTask, deleteTask, updateTask } from '../actions/task.action';
+  addTask,
+  deleteTask,
+  loadTaskSuccess,
+  updateTask,
+} from '../actions/task.action';
 
 export const initialState: AppState = {
   tasks: [],
@@ -17,7 +18,20 @@ export const initialState: AppState = {
  */
 export const taskReducer = createReducer(
   initialState,
+  on(loadTaskSuccess, (state, { tasks }) => {
+    return { ...state, tasks: [...(tasks ?? [])] };
+  }),
   on(addTask, (state, { task }) => {
-    return { ...state, tasks: [...state.tasks, task] };
+    return { ...state, tasks: [...(state.tasks ?? []), task] };
+  }),
+  on(updateTask, (state, { task }) => {
+    const updatedTask = state?.tasks?.map((t) =>
+      t?.id === task?.id ? task : t
+    );
+    return { ...state, tasks: [...(updatedTask ?? [])] };
+  }),
+  on(deleteTask, (state, { id }) => {
+    const updatedTask = state?.tasks?.filter((task) => task?.id !== id);
+    return { ...state, tasks: [...(updatedTask ?? [])] };
   })
 );

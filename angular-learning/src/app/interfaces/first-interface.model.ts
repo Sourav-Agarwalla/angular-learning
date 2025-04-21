@@ -5,7 +5,7 @@ export interface Task {
 }
 
 export interface AppState {
-  tasks: Task[];
+  tasks?: Task[];
 }
 
 export interface CustomAction {

@@ -6,6 +6,3 @@ export const selectTasks = createSelector(
   selectTasksState,
   (state) => state.tasks
 );
-
-// export const selectTaskById = (id: number) =>
-//   createSelector(selectTasks, (tasks) => tasks.find((task) => task.id === id));
