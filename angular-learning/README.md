@@ -59,3 +59,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
 ANGULAR BTS - https://medium.com/siam-vit/how-an-angular-app-work-behind-the-scenes-angular-flow-dcc4d1df27bd
+
+Angular Redux(NGRX) Official Documentation - https://ngrx.io/guide/store
+
+Angular Redux(NGRX) BLOG - https://dev.to/bytebantz/mastering-angular-18-state-management-using-ngrx-5fao

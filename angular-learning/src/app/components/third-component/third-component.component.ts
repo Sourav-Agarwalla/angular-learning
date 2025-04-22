@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable, map } from 'rxjs';
-import {
-  loadTask,
-  addTask,
-  updateTask,
-  deleteTask,
-} from '../../actions/task.action';
+import { loadTask, addTask, updateTask, deleteTask } from '../../actions/task.action';
 import { Task, AppState } from '../../interfaces/first-interface.model';
 import { selectTasksState } from '../../selectors/task.selectors';
 import { CommonModule } from '@angular/common';
@@ -21,9 +16,7 @@ export class ThirdComponentComponent implements OnInit {
   tasks$?: Observable<Task[] | undefined>;
 
   constructor(private store: Store<AppState>) {
-    this.tasks$ = this.store
-      .pipe(select(selectTasksState))
-      .pipe(map(({ tasks }) => tasks));
+    this.tasks$ = this.store.pipe(select(selectTasksState)).pipe(map(({ tasks }) => tasks));
   }
 
   ngOnInit(): void {

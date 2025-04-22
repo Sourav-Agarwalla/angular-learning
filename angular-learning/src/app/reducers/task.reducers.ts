@@ -1,11 +1,6 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import { createReducer, on } from '@ngrx/store';
 import { AppState } from '../interfaces/first-interface.model';
-import {
-  addTask,
-  deleteTask,
-  loadTaskSuccess,
-  updateTask,
-} from '../actions/task.action';
+import { addTask, deleteTask, loadTaskSuccess, updateTask } from '../actions/task.action';
 
 export const initialState: AppState = {
   tasks: [],
@@ -25,13 +20,11 @@ export const taskReducer = createReducer(
     return { ...state, tasks: [...(state.tasks ?? []), task] };
   }),
   on(updateTask, (state, { task }) => {
-    const updatedTask = state?.tasks?.map((t) =>
-      t?.id === task?.id ? task : t
-    );
+    const updatedTask = state?.tasks?.map(t => (t?.id === task?.id ? task : t));
     return { ...state, tasks: [...(updatedTask ?? [])] };
   }),
   on(deleteTask, (state, { id }) => {
-    const updatedTask = state?.tasks?.filter((task) => task?.id !== id);
+    const updatedTask = state?.tasks?.filter(task => task?.id !== id);
     return { ...state, tasks: [...(updatedTask ?? [])] };
   })
 );

@@ -1,11 +1,11 @@
 @let taskLength = (tasks$ | async)?.length;
 <!-- Get the length of tasks observable -->
-@for(task of tasks$ | async; track task.id) {
-<div class="task">
-  <h3>{{ task.title }}</h3>
-  <p>{{ task.description }}</p>
-  <button (click)="updateTask(task)">Update</button>
-  <button (click)="deleteTask(task.id)">Delete</button>
-</div>
+@for (task of tasks$ | async; track task.id) {
+  <div class="task">
+    <h3>{{ task.title }}</h3>
+    <p>{{ task.description }}</p>
+    <button (click)="updateTask(task)">Update</button>
+    <button (click)="deleteTask(task.id)">Delete</button>
+  </div>
 }
 <button (click)="addNewTask(taskLength)">Add New Task</button>

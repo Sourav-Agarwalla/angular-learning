@@ -20,6 +20,7 @@ import {
 })
 export class SecondComponentComponent implements OnInit {
   title = input('', {
+    // eslint-disable-next-line @angular-eslint/no-input-rename
     alias: 'name',
     transform: this.trimString,
   });
@@ -29,12 +30,13 @@ export class SecondComponentComponent implements OnInit {
   value = model(0);
   @Input() toggled?: boolean;
   @Output() toggledChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   onToggleChange = output<string>();
 
   ngOnInit() {
     this.subTitle.set('This is the second component!');
     setTimeout(() => {
-      this.value.update((prev) => prev + 1);
+      this.value.update(prev => prev + 1);
       this.onToggleChange.emit('Learning Angular is fun!');
     }, 5000);
   }

@@ -15,22 +15,10 @@ export enum TaskActionsTypes {
  * The second argument, props, is used to define the payload of the action.
  */
 export const loadTask = createAction(TaskActionsTypes.LoadTask);
-export const loadTaskSuccess = createAction(
-  TaskActionsTypes.LoadTaskSuccess,
-  props<{ tasks: Task[] }>()
-);
-export const addTask = createAction(
-  TaskActionsTypes.AddTask,
-  props<{ task: Task }>()
-);
-export const updateTask = createAction(
-  TaskActionsTypes.UpdateTask,
-  props<{ task: Task }>()
-);
-export const deleteTask = createAction(
-  TaskActionsTypes.DeleteTask,
-  props<{ id: number }>()
-);
+export const loadTaskSuccess = createAction(TaskActionsTypes.LoadTaskSuccess, props<{ tasks: Task[] }>());
+export const addTask = createAction(TaskActionsTypes.AddTask, props<{ task: Task }>());
+export const updateTask = createAction(TaskActionsTypes.UpdateTask, props<{ task: Task }>());
+export const deleteTask = createAction(TaskActionsTypes.DeleteTask, props<{ id: number }>());
 
 /**
  * ALTERNATE WAY TO CREATE ACTIONS
