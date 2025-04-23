@@ -12,7 +12,7 @@
     "lint:fix": "npm run lint --fix && npm run stylelint --fix",
     "prettier": "prettier --write \"src/**/*.{ts,html,scss}\"",
     "format": "npm run prettier && npm run lint:fix",
-    "prepare": "husky install"
+    "prepare": "cd .. && husky install angular-learning/.husky && husky add angular-learning/.husky/pre-commit \"npm run format\" && husky add angular-learning/.husky/pre-commit \"npm run build\""
   },
   "private": true,
   "dependencies": {
