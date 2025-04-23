@@ -14,7 +14,6 @@ import { CommonModule } from '@angular/common';
 })
 export class ThirdComponentComponent implements OnInit {
   tasks$?: Observable<Task[] | undefined>;
-  counter = 0;
 
   constructor(private store: Store<AppState>) {
     this.tasks$ = this.store.pipe(select(selectTasksState)).pipe(map(({ tasks }) => tasks));
