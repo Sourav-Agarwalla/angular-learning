@@ -63,3 +63,5 @@ ANGULAR BTS - https://medium.com/siam-vit/how-an-angular-app-work-behind-the-sce
 Angular Redux(NGRX) Official Documentation - https://ngrx.io/guide/store
 
 Angular Redux(NGRX) BLOG - https://dev.to/bytebantz/mastering-angular-18-state-management-using-ngrx-5fao
+
+Integrating husky BLOG - https://medium.com/@sehban.alam/husky-for-angular-what-why-when-and-how-31355f12ede0, https://dev.to/zhangzewei/pre-commit-with-husky-lint-staged-2kcm
