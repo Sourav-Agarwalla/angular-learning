@@ -66,4 +66,4 @@ Angular Redux(NGRX) BLOG - https://dev.to/bytebantz/mastering-angular-18-state-m
 
 Integrating husky BLOG - https://medium.com/@sehban.alam/husky-for-angular-what-why-when-and-how-31355f12ede0, https://dev.to/zhangzewei/pre-commit-with-husky-lint-staged-2kcm
 
-Github Actions Documentation - https://docs.github.com/en/actions 
+Github Actions Documentation - https://docs.github.com/en/actions
